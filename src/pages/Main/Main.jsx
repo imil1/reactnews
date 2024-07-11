@@ -13,7 +13,7 @@ const Main = () => {
             try {
                 setIsLoading(true);
                 const res = await getNews();
-                setNews(res.news);
+                 setNews(res.news);
                 setIsLoading(false);
             } catch (error) {
                 console.log(error);
