@@ -14,7 +14,12 @@ const Pagination = ({
                 disabled={currentPage <= 1}
                 onClick={handlePrevPage}
                 className={style.arrow}>
-                {'⬅'}
+                <img
+                    src="/arrowtoleft.svg"
+                    alt="left"
+                    width={16}
+                    height={16}
+                />
             </button>
             <div className={style.list}>
                 {[...Array(totalPages)].map((_, index) => (
@@ -31,7 +36,12 @@ const Pagination = ({
                 disabled={currentPage === 10}
                 onClick={handleNextPage}
                 className={style.arrow}>
-                {'➡'}
+                <img
+                    src="/arrowtoright.svg"
+                    alt="right"
+                    width={16}
+                    height={16}
+                />
             </button>
         </div>
     );
