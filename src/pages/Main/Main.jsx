@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import style from './main.module.scss';
-import { getNews } from '../../api/apiNews';
+import { getCategories, getNews } from '../../api/apiNews';
 import NewsBanner from '../../components/newsBanner/NewsBanner';
 import NewsList from '../../components/NewsList/NewsList';
 import Skeleton from '../../components/skeleton/Skeleton';
 import Pagination from '../../components/Pagination/Pagination';
+import Categories from '../../components/categories/Categories';
 
 const Main = () => {
     const [news, setNews] = useState([]);
@@ -13,20 +14,39 @@ const Main = () => {
     const totalPages = 10;
     const pageSize = 10;
 
+    const [categories, setCategories] = useState([]);
+    const [selectedCat, setSelectedCat] = useState('All');
+
     const fetchNews = async (currentPage) => {
         try {
             setIsLoading(true);
-            const res = await getNews(currentPage, pageSize);
+            const res = await getNews({
+                page_number: currentPage,
+                page_size: pageSize,
+                category: selectedCat === 'All' ? null : selectedCat,
+            });
             setNews(res.news);
             setIsLoading(false);
         } catch (error) {
             console.log(error);
         }
     };
-
+    const fetchCategories = async () => {
+        try {
+            const res = await getCategories();
+            setCategories(['All', ...res.categories]);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    
     useEffect(() => {
         fetchNews(currentPage);
-    }, [currentPage]);
+    }, [currentPage, selectedCat]);
+
+    useEffect(() => {
+        fetchCategories();
+    }, []);
 
     const handleNextPage = () => {
         if (currentPage < totalPages) {
@@ -52,6 +72,11 @@ const Main = () => {
                     type="banner"
                 />
             )}
+            <Categories
+                categories={categories}
+                setSelectedCat={setSelectedCat}
+                selectedCat={selectedCat}
+            />
             <Pagination
                 totalPages={totalPages}
                 handleNextPage={handleNextPage}
