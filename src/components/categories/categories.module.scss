@@ -1,5 +1,6 @@
 .categories {
     width: 100%;
+    height: 50px;
     display: flex;
     gap: 8px;
     align-items: flex-start;
@@ -12,8 +13,10 @@
         display: flex;
         align-items: center;
         padding: 8px 16px;
+        margin-bottom: 12px;
+        color: #888;
         border: none;
-        border-radius: 32px;
+        border-radius: 13px;
         background-color: #f2f4f5;
         text-transform: uppercase;
         border: 0.5px solid rgb(27, 128, 128);
