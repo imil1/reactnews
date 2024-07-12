@@ -30,9 +30,14 @@
 }
 
 .arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 32px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     background-color: rgb(27, 128, 128);
     color: #fff;
 

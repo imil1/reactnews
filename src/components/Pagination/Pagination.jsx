@@ -17,8 +17,8 @@ const Pagination = ({
                 <img
                     src="/arrowtoleft.svg"
                     alt="left"
-                    width={10}
-                    height={10}
+                    width={16}
+                    height={16}
                 />
             </button>
             <div className={style.list}>
@@ -39,8 +39,8 @@ const Pagination = ({
                 <img
                     src="/arrowtoright.svg"
                     alt="right"
-                    width={10}
-                    height={10}
+                    width={16}
+                    height={16}
                 />
             </button>
         </div>
