@@ -99,7 +99,7 @@ const Main = () => {
                 <NewsList news={news} />
             ) : (
                 <Skeleton
-                    count={11}
+                    count={10}
                     type="item"
                 />
             )}

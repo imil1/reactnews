@@ -9,11 +9,16 @@
 .pageNumber {
     padding: 8px;
     border: none;
-    background-color: white;
+    background-color: rgb(27, 128, 128);
+    border-radius: 4px;
+    color: #fff;
     cursor: pointer;
 
     &:disabled {
         cursor: not-allowed;
+        background-color: #fff;
+        color: #868686;
+        border: .5px solid #868686;
     }
 }
 
@@ -21,13 +26,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 4px;
 }
 
 .arrow {
+    width: 32px;
     border: none;
-    background-color: white;
+    border-radius: 12px;
+    background-color: rgb(27, 128, 128);
+    color: #fff;
     cursor: pointer;
     &:disabled {
         cursor: not-allowed;
+        background-color: #fff;
+        color: #868686;
+        border: .5px solid #868686;
     }
 }

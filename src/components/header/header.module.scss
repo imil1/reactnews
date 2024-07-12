@@ -4,8 +4,8 @@
     gap: 12px;
     width: 100%;
     padding: 12px 24px;
-    background-color: #fff;
-    border-bottom: 1.5px solid #f2f4f5;
+    // background-color: #fff;
+    border-bottom: 1.5px solid rgb(27, 128, 128);
 
     .title {
         font-style: 28px;
@@ -14,5 +14,7 @@
     }
     .date {
         font-style: 16px;
+        font-weight: 500;
+        letter-spacing: 1.5px;
     }
 }
