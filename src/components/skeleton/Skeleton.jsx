@@ -1,11 +1,11 @@
 import React from 'react';
 import style from './skeleton.module.scss';
 
-const Skeleton = ({ count = 1, type = 'banner' }) => {
+const Skeleton = ({ count = 1, type = 'banner', direction = 'column' }) => {
     return (
         <>
             {count > 1 ? (
-                <ul className={style.list}>
+                <ul className={direction === 'column' ? style.columnlist : style.rowlist}>
                     {[...Array(count)].map((_, index) => (
                         <li
                             key={index}

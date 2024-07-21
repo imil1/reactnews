@@ -1,7 +1,7 @@
 import React from 'react';
 import Skeleton from '../../components/skeleton/Skeleton';
 
-function withSkeleton(Component, type, count) {
+function withSkeleton(Component, type, count, direction) {
     return function WithSkeleton(props) {
         const { isLoading, ...restProps } = props;
         if (isLoading) {
@@ -9,6 +9,7 @@ function withSkeleton(Component, type, count) {
                 <Skeleton
                     type={type}
                     count={count}
+                    direction={direction}
                 />
             );
         }
