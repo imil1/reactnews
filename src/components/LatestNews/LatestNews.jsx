@@ -1,9 +1,12 @@
 import React from 'react'
 import style from './latestnews.module.scss'
+import BannersList from '../BannersList/BannersList'
 
-const LatestNews = () => {
+const LatestNews = ({banners,isLoading}) => {
   return (
-    <section className={style.section}>LatestNews</section>
+    <section className={style.section}>
+        <BannersList banners={banners} isLoading={isLoading}/>
+    </section>
   )
 }
 
